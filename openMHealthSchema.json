@@ -1,0 +1,56 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+
+    "description": "This schema represents a person's liver enzymes as a combination of alkaline phosphatase, aspartate aminotransferase and  alanine aminotransferase.",
+    "type": "object",
+    "references": [
+        {
+            "description": "The SNOMED codes represents Liver enzymes levels - findings",
+            "url": "http://purl.bioontology.org/ontology/SNOMEDCT/365769003"
+        }
+    ],
+    "definitions": {
+        "alkaline_phosphatase": {
+            "$ref": "alkaline-phosphatase-1.x.json"
+        },
+        "aspartate_aminotransferase": {
+            "$ref": "aspartate-aminotransferase-1.x.json"
+        },
+        "alanine_aminotransferase": {
+            "$ref": "alanine_aminotransferase-1.x.json"
+        },
+        "bilirubin": {
+            "$ref": "bilirubin-1.x.json"
+        },
+        "time_frame": {
+            "$ref": "time-frame-1.x.json"
+        }
+    },
+
+    "properties": {
+        "alkaline_phosphatase": {
+            "$ref": "#/definitions/alkaline_phosphatase"
+        },
+        "aspartate_aminotransferase": {
+            "$ref": "#/definitions/aspartate_aminotransferase"
+        },
+        "alanine_aminotransferase": {
+            "$ref": "#/definitions/alanine_aminotransferase"
+        },
+        "bilirubin": {
+            "$ref": "#/definitions/bilirubin"
+        },
+        "effective_time_frame": {
+            "$ref": "#/definitions/time_frame"
+        }
+    },
+
+    "required": [
+        "alkaline_phosphatase",
+        "aspartate_aminotransferase",
+        "alanine_aminotransferase",
+        "bilirubin",
+        "effective_time_frame"
+    ]
+}
+
